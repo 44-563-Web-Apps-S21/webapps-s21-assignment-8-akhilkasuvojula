@@ -16,10 +16,10 @@ var value=Math.floor(Math.random()*(max-min)+min)
       res.statusCode = 200      //code for OK
       res.setHeader('Content-Type', 'text/html') //Set the mime type HTML
 
-      res.write('<html> <head> <title> webpage for bonus  </title> </head>')
+      res.write('<html> <head> <title>  bonus webpage  </title> </head>')
       res.write('<body>')
      
-      res.write('<h1bonus with random number usage</h1>')
+      res.write('<h1>usage of random number</h1>')
       res.write(`<p>${arr[value]}</p>`)
       res.end('</body></html>')
       //Close the responset
