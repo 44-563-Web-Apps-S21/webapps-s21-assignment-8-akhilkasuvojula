@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Compute</title>
+    </head>
+    <body>
+        <h2>Akhil Kasuvojula computes</h2>
+<div>
+        <input type="number" name="x" id="x">
+    
+        </div>
+
+        <button onclick="remoteCompute()">Remote compute</button>
+<div id="result">
+
+</div>
+<script>
+    
+    const remoteCompute=()=>{
+        let n1=document.getElementById("x").value
+        
+        let url= `http://127.0.0.1:3001?x=${n1}`
+        
+        fetch(url).then(
+            (response)=>{
+                console.log(response)
+                return response.text();
+            }
+        ).then((data)=>{
+            console.log(data)
+            document.getElementById("result").innerHTML=data
+        }).catch(err=>{
+            document.getElementById("result").innerHTML=err
+        })
+    }
+</script>
+
+    </body>
+</html>
